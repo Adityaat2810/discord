@@ -8,32 +8,38 @@ import {
     DialogTitle
 
 } from '@/components/ui/dialog'
-
+import qs from 'query-string'
 import { useModal } from "@/hooks/use-model-state";
 import { Button } from '../ui/button';
 import { useState } from 'react';
 import axios from 'axios';
-import { useRouter } from 'next/navigation';
-
+import { useParams, useRouter } from 'next/navigation';
 
 
 
 export const DeleteChannelModal= () => {
     const {onOpen,isOpen, onClose,type,data} =useModal()
-
-    const {server} = data
+    const params =useParams()
     const [isLoading , setIsLoading]=useState(false)
     const router = useRouter()
-    const isModalOpen =isOpen && type === "deleteServer"
+    const isModalOpen =isOpen && type === "deleteChannel"
+
+    const{server,channel}= data
     
     const onClick = async ()=>{
         try{
 
             setIsLoading(true)
-            await axios.delete(`/api/servers/${server?.id}/`);
+            const url= qs.stringifyUrl({
+               url:`/api/channels/${channel?.id}` ,
+               query:{
+                serverId:server?.id
+               }
+            })
+            await axios.delete(url);
             onClose();
             router.refresh()
-            router.push('/')
+            router.push(`/servers/${server?.id}`)
 
 
         }catch(error){
@@ -49,14 +55,14 @@ export const DeleteChannelModal= () => {
             overflow-hidden'>
                 <DialogHeader className='pt-8 px-6'>
                     <DialogTitle className='text-2xl text-center font-bold'>
-                        Delete Server
+                        Delete Channel
                     </DialogTitle>
 
                     <DialogDescription className='text-center text-slate-700'>
                         Are you sure you want to do this ? <br/>
-                        <span
+                        #<span
                           className='font-semibold text-indigo-500'
-                        >{server?.name}</span> will be permanently deleted.
+                        >{channel?.name}</span> will be permanently deleted.
                     </DialogDescription>
 
                 
