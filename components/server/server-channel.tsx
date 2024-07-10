@@ -48,7 +48,7 @@ function ServerChannel({channel,server,role}:ServerChannelProps) {
         {channel.name !== "general" && role !== MemeberRole.GUEST &&(
           <div className='ml-auto flex items-center gap-x-2'>
             <ActionTooltip label="Edit">
-              <Edit className='
+              <Edit onClick={()=>onOpen("editChannel",{channel,server})} className='
               invisible group-hover:visible w-4 h-4 text-zinc-500 
               hover:text-zinc-600 dark:text-zinc-400 
               dark:hover:text-zinc-300 transition'/>
