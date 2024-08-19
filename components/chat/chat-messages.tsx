@@ -8,6 +8,7 @@ import { group } from "console";
 import {format} from 'date-fns'
 import { Fragment } from "react";
 import { ChatItem } from "./chat-item";
+import { useChatSocket } from "@/hooks/use-chat-socket";
 
 const DATE_FORMAT= "d MMM yyyy, HH:mm"
 
@@ -40,7 +41,11 @@ function ChatMessages({
   paramValue,
   type
 }: chatMessagesProps) {
+
   const queryKey =`chat:${chatId}`
+  const addKey = `chat:${chatId}:messages`
+  const updateKey =`chat:${chatId}:messages:update`
+
   const {
     data ,
     fetchNextPage,
@@ -53,6 +58,8 @@ function ChatMessages({
     paramKey,
     paramValue
   })
+
+  useChatSocket({queryKey,addKey ,updateKey})
   if(status ==="pending"){
     return (
       <div className="flex-grow flex flex-col gap-y-2 justify-center items-center">
