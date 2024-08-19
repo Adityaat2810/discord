@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { Member, MemeberRole, Profile } from "@prisma/client"
 import { UserAvatar } from "../user-avatar";
 import { ActionTooltip } from "../action-tooltip";
-import { Edit, FileIcon, ShieldAlert, ShieldCheck } from 'lucide-react';
+import { Edit, FileIcon, ShieldAlert, ShieldCheck, Trash } from 'lucide-react';
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
@@ -19,6 +19,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import axios from "axios";
+import { useModal } from "@/hooks/use-model-state";
 
 interface ChatItemProps{
     id:string ;
@@ -53,7 +54,7 @@ export const ChatItem = ({
 }:ChatItemProps)=>{
 
     const [isEditing , setIsEditing]= useState(false)
-    const [isDleteing, setIsDeleteing ]= useState(false)
+    const {onOpen}= useModal();
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver:zodResolver(formSchema),
@@ -257,6 +258,19 @@ export const ChatItem = ({
                             />
                         </ActionTooltip>
                     )}
+
+                    <ActionTooltip label="Delete">
+                        <Trash
+                            onClick={()=>onOpen("deleteMessage",{
+                                apiUrl:`${socketUrl}/${id}`,
+                                query:socketQuery
+                            })}
+                            className="cursor-pointer ml-auto w-4 h-4
+                            text-zinc-500 hover:text-zinc-600 dark:hover:text-zinc-300
+                            transition"
+                        />
+
+                    </ActionTooltip>
                 </div>
             )}
 
