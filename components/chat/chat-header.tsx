@@ -3,6 +3,7 @@ import React from 'react'
 import { MobileToogel } from '../mobile-toogle';
 import { UserAvatar } from '../user-avatar';
 import SocketIndicator from '../socket-inxicator';
+import { ChatVideoButton } from '../chat-video-button';
 interface chatHeaderProps{
     serverId:string,
     name:string,
@@ -38,6 +39,7 @@ function ChatHeader({
         </p>
 
         <div className='ml-auto flex items-center '>
+          {type === "conversation" && <ChatVideoButton/> }
           <SocketIndicator/>
         </div>
     </div>
