@@ -8,6 +8,7 @@ import { auth } from '@clerk/nextjs/server';
 import { ChannelType } from '@prisma/client';
 import { redirect } from 'next/navigation';
 import React from 'react';
+export const runtime = 'experimental-edge'
 
 interface channelIdPageProps {
   params: {

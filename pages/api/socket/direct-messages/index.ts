@@ -2,6 +2,7 @@ import { currentProfilePages } from "@/lib/current-profile-pages";
 import { db } from "@/lib/db";
 import { NextApiResponseIo } from "@/types";
 import { NextApiRequest } from "next";
+export const runtime = 'experimental-edge'
 
 export default async function handler(
     req: NextApiRequest,

@@ -4,6 +4,7 @@ import { currentProfilePages } from '@/lib/current-profile-pages';
 import { db } from '@/lib/db';
 import { error } from 'console';
 import { MemeberRole, Profile } from '@prisma/client';
+export const runtime = 'experimental-edge'
 
 export default async function handler(
     req:NextApiRequest,

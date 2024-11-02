@@ -1,6 +1,7 @@
 import { Server as NetServer} from 'http'
 import { NextApiRequest, NextApiResponse } from 'next'
 import {Server as ServerIO} from 'socket.io'
+export const runtime = 'experimental-edge'
 
 import { NextApiResponseIo } from '@/types'
 

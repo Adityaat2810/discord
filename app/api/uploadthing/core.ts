@@ -1,7 +1,8 @@
 import { createUploadthing, type FileRouter } from "uploadthing/next";
 import { auth } from "@clerk/nextjs/server";
 const f = createUploadthing();
- 
+export const runtime = 'experimental-edge'
+
 const handelAuth =() =>{
     const {userId} =auth();
     if(!userId) throw new Error("Unauthorized")

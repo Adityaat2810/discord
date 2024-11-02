@@ -2,6 +2,7 @@ import { currentProfile } from "@/lib/current-profile"
 import { db } from "@/lib/db";
 import { MemeberRole } from "@prisma/client";
 import { NextResponse } from "next/server"
+export const runtime = 'experimental-edge'
 
 export async function POST(
     req:Request
