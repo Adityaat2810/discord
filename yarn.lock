@@ -42,7 +42,7 @@
   dependencies:
     regenerator-runtime "^0.14.0"
 
-"@bufbuild/protobuf@^1.7.2":
+"@bufbuild/protobuf@^1.10.0", "@bufbuild/protobuf@^1.7.2":
   version "1.10.0"
   resolved "https://registry.yarnpkg.com/@bufbuild/protobuf/-/protobuf-1.10.0.tgz#1a67ac889c2d464a3492b3e54c38f80517963b16"
   integrity sha512-QDdVFLoN93Zjg36NoQPZfsVH9tZew7wKDKyV5qRdj8ntT4wQCOradQjRaTdwMhWUYsgKsvCINKKm87FdEk96Ag==
@@ -284,6 +284,13 @@
   integrity sha512-2RJQwzBa+MfUoy0zBWuyj8S2MTBxeTgREeG0r/1bNmkAFiBhsdgr87gIvblyqJxffUxJpALMu1Ee0M1XHX+9Ug==
   dependencies:
     "@bufbuild/protobuf" "^1.7.2"
+
+"@livekit/protocol@^1.27.1":
+  version "1.27.1"
+  resolved "https://registry.yarnpkg.com/@livekit/protocol/-/protocol-1.27.1.tgz#10fc0bfb39bb259b173f7ada4be14983dbd6e589"
+  integrity sha512-ISEp7uWdV82mtCR1eyHFTzdRZTVbe2+ZztjmjiMPzR/KPrI1Ma/u5kLh87NNuY3Rn8wv1VlEvGHHsFjQ+dKVUw==
+  dependencies:
+    "@bufbuild/protobuf" "^1.10.0"
 
 "@next/env@14.2.3":
   version "14.2.3"
@@ -4381,6 +4388,11 @@ tslib@2.6.3, tslib@^2.0.0, tslib@^2.0.3, tslib@^2.1.0, tslib@^2.4.0:
   version "2.6.3"
   resolved "https://registry.npmjs.org/tslib/-/tslib-2.6.3.tgz"
   integrity sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==
+
+tslib@^2.8.1:
+  version "2.8.1"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.8.1.tgz#612efe4ed235d567e8aba5f2a5fab70280ade83f"
+  integrity sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==
 
 type-check@^0.4.0, type-check@~0.4.0:
   version "0.4.0"
