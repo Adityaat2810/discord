@@ -6,6 +6,7 @@ import { NextApiRequest } from "next";
 export default async function handler(
     req: NextApiRequest,
     res: NextApiResponseIo
+    
 ) {
     if (req.method !== "POST") {
         return res.status(405).json({
