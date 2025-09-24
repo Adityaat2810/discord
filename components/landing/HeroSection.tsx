@@ -45,7 +45,7 @@ const HeroSection = () => {
         <div className="max-w-5xl mx-auto">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-black/10 dark:bg-white/10 border border-black/20 dark:border-white/20 mb-8 backdrop-blur-sm">
             <span className="text-sm text-gray-700 dark:text-gray-300">
-              🚀 AI-powered moderation
+              🚀 Powered with postgres
             </span>
           </div>
 

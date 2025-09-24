@@ -1,0 +1,8 @@
+docker run -d \
+  --name discord-postgres \
+  -e POSTGRES_USER=admin \
+  -e POSTGRES_PASSWORD=secret \
+  -e POSTGRES_DB=discord_clone \
+  -p 5432:5432 \
+  -v discord_pg_data:/var/lib/postgresql/data \
+  postgres:15
