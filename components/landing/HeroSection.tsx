@@ -78,12 +78,16 @@ const HeroSection = () => {
               size="lg"
               variant="outline"
               className="text-lg px-8 py-6 rounded-lg border-black/30 dark:border-white/30 text-black dark:text-white hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300"
+              onClick={
+                ()=>{
+                  alert('Demo not available yet! Please sign up to explore the app.')
+                }
+              }
             >
               <Play className="w-5 h-5 mr-2" />
               Watch Demo
             </Button>
           </div>
-
 
           {/* Feature Icons */}
           <div className="flex flex-wrap justify-center gap-12 mb-12">
